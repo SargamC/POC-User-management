@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useGetUsersQuery, useDeleteUserMutation, useAddUserMutation, useUpdateUserMutation } from '../apiSlice';
 import { Button, Dialog, DialogTitle, DialogContent, DialogActions, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography } from '@mui/material';
-import EditUserForm from '../components/UserForm'; // Import the UserForm component
+import EditUserForm from '../components/UserForm'; 
 import { logout } from '../utils/auth';
-import MessageBox from '../components/MessageBox'; // Import the MessageBox component
+import MessageBox from '../components/MessageBox'; 
 
 const Home = () => {
   const { data: users, error, isLoading } = useGetUsersQuery();
@@ -14,7 +14,7 @@ const Home = () => {
   const [showUserForm, setShowUserForm] = useState(false); 
   const [openDialog, setOpenDialog] = useState(false);
 
-  // State for managing message box
+  
   const [openMessageDialog, setOpenMessageDialog] = useState(false);
   const [messageBoxMessage, setMessageBoxMessage] = useState('');
 
@@ -85,7 +85,7 @@ const Home = () => {
     const logoutConfirmed = window.confirm('Are you sure you want to logout?');
     if (logoutConfirmed) {
       logout();
-      window.location.href = '/login'; // Redirect to login page after logout
+      window.location.href = '/login'; 
       console.log('Logout successful');
     }
   };

@@ -35,8 +35,7 @@ export const api = createApi({
         invalidatesTags: ['User'],
       }),
       onMutate: ({ id, updatedUser }) => {
-        // You can perform optimistic updates here if needed
-        // For example, dispatch an action to update the local state
+        
       },
     }),
   }),

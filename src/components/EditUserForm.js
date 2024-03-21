@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useUpdateUserMutation } from '../apiSlice'; // Import the useUpdateUserMutation hook
+import { useUpdateUserMutation } from '../apiSlice'; 
 import { TextField, Button } from '@mui/material';
 import MessageBox from './MessageBox';
 
@@ -9,12 +9,12 @@ const EditUserForm = ({ user, onClose }) => {
   const [email, setEmail] = useState(user ? user.email : '');
   const [messageBox, setMessageBox] = useState({ open: false, message: '' });
   const dispatch = useDispatch();
-  const [updateUserMutation] = useUpdateUserMutation(); // Destructure the updateUserMutation function
+  const [updateUserMutation] = useUpdateUserMutation(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await updateUserMutation({ id: user.id, updatedUser: { name, email } }); // Call the updateUserMutation with the updated user data
+      await updateUserMutation({ id: user.id, updatedUser: { name, email } }); 
       setMessageBox({ open: true, message: 'User updated successfully' });
       setTimeout(() => {
         setMessageBox({ open: false, message: '' });

@@ -10,7 +10,7 @@ const MessageBox = ({ open, onClose, message, duration }) => {
       const timer = setTimeout(() => {
         setIsOpen(false);
         onClose();
-      }, duration || 3000); // Default duration is 3 seconds (3000 milliseconds)
+      }, duration || 3000); 
       return () => clearTimeout(timer);
     }
   }, [open, onClose, duration]);
